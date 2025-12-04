@@ -1,4 +1,11 @@
-# Laravel Snowfall
+<picture>
+    <source media="(prefers-color-scheme: dark)" 
+            srcset="https://remerit.us/open-source/banners/laravel-snowfall/dark.png">
+    <img alt="Logo for laravel-snowfall" 
+         src="https://remerit.us/open-source/banners/laravel-snowfall/light.png">
+</picture>    
+
+# Add Snowfall to your Laravel Project
 
 A configurable snowfall effect for Laravel applications. 
 Add festive snow to your site easily with multiple layers, seasonal activation, and fully customizable settings.
