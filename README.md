@@ -10,6 +10,9 @@
 A configurable snowfall effect for Laravel applications. 
 Add festive snow to your site easily with multiple layers, seasonal activation, and fully customizable settings.
 
+<img alt="Preview of remeritus/laravel-snowfall" 
+         src="https://remerit.us/open-source/previews/laravel-snowfall/preview.gif">
+
 ## Features
 
 - Multiple snow layers with configurable flake count, size, and speed.
