@@ -1,16 +1,31 @@
 @php
-$seasonalActivate = true;
+    $config = config('snowfall');
 
-$start = config('snowfall.start_date') ? \Carbon\Carbon::parse(config('snowfall.start_date')) : null;
-$end = config('snowfall.end_date') ? \Carbon\Carbon::parse(config('snowfall.end_date')) : null;
-$now = \Carbon\Carbon::now();
+    // Master switch
+    if (! $config['enabled']) {
+        return;
+    }
 
-if ($start && $end) {
-    $seasonalActivate = $now->between($start, $end);
-}
+    // Determine if snow should show
+    $shouldSnow = false;
+
+    if ($config['mode'] === 'always') {
+        $shouldSnow = true;
+    } elseif ($config['mode'] === 'seasonal') {
+        $start = $config['start_date'] ? \Carbon\Carbon::parse($config['start_date']) : null;
+        $end   = $config['end_date'] ? \Carbon\Carbon::parse($config['end_date']) : null;
+        $now   = \Carbon\Carbon::now();
+
+        if ($start && $end) {
+            $shouldSnow = $now->between($start, $end);
+        }
+    }
+
+    if (! $shouldSnow) {
+        return;
+    }
 @endphp
 
-@if(config('snowfall.activate') && $seasonalActivate)
 <canvas id="snowfall-canvas"></canvas>
 <script>
 (function(){
@@ -87,4 +102,3 @@ if ($start && $end) {
     animate();
 })();
 </script>
-@endif
