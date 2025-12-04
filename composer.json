@@ -1,0 +1,22 @@
+{
+    "name": "remeritus/laravel-snowfall",
+    "description": "A configurable snowfall effect for Laravel with Blade directive.",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Remeritus\\Snowfall\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Remeritus\\Snowfall\\SnowfallServiceProvider"
+            ]
+        }
+    },
+    "require": {
+        "php": "^8.0",
+        "illuminate/support": "^10.0"
+    }
+}
