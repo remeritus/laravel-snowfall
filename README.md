@@ -60,6 +60,36 @@ Example:
 
 ```
 
+#### Environment Variables
+You may override any configuration setting via .env.
+Here are the available keys:
+
+##### Master switch
+```env
+SNOWFALL_ENABLED=true
+```
+`true` → package loads and snow logic runs
+
+`false` → package does nothing, no assets included
+##### Mode control
+```env
+SNOWFALL_MODE=seasonal
+```
+Possible values:
+| Value | Description|
+|-------|------------|
+| `seasonal` | Snow only appears between the configured dates |
+| `always` | Snow appears all the time |
+
+##### Seasonal dates
+```env
+SNOWFALL_START_DATE=2025-12-01
+SNOWFALL_END_DATE=2025-12-31
+```
+If not provided, the package defaults to:
+
+December 1 → December 31 of the current year.
+
 ### 5. Notes
 
 The snow is rendered via a `<canvas>` overlay with pointer-events: none so it won’t block user interaction.
