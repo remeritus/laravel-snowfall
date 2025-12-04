@@ -1,0 +1,72 @@
+# Laravel Snowfall
+
+A configurable snowfall effect for Laravel applications with Blade directive support. Add festive snow to your site easily with multiple layers, seasonal activation, and fully customizable settings.
+
+## Features
+
+- Multiple snow layers with configurable flake count, size, and speed.
+- Seasonal activation: automatically show snow between configurable start and end dates.
+- Blade directive: `@snowFall` for effortless inclusion.
+- Fully configurable via `config/snowfall.php`.
+- Lightweight, vanilla JS implementation using `<canvas>`.
+
+## Installation
+
+### 1. Require the package
+
+If using locally:
+
+```bash
+composer require remeritus/laravel-snowfall
+```
+Or include via your composer.json local repository.
+
+### 2. Publish the configuration
+```bash
+php artisan vendor:publish --provider="Remeritus\Snowfall\SnowfallServiceProvider" --tag=config
+```
+### 3. Usage in Blade
+Simply add the directive where you want the snowfall to appear:
+```php
+@snowFall
+```
+
+### 4. Configuration
+Edit `config/snowfall.php` to customize:
+
+- activate: Enable or disable globally.
+- start_date / end_date: Optional seasonal activation.
+- layers: Array of snow layers. Each layer supports:
+	- flake_count: Number of flakes in this layer.
+	- max_size: Maximum flake size.
+	- max_speed: Maximum falling speed.
+	- swing_min / swing_max: Side-to-side swinging amplitude.
+- color: Snow RGB color (e.g., '255,255,255').
+- opacity: Snow opacity (0.0–1.0).
+- canvas_z_index: Z-index of the snow `<canvas>`.
+
+Example:
+```php
+'layers' => [
+    [
+        'flake_count' => 60,
+        'max_size' => 4,
+        'max_speed' => 1,
+        'swing_min' => 0.5,
+        'swing_max' => 1.5,
+    ],
+    // Add more layers as needed
+],
+
+```
+
+### 5. Notes
+
+The snow is rendered via a `<canvas>` overlay with pointer-events: none so it won’t block user interaction.
+Works on all modern browsers with JavaScript enabled.
+Multiple layers create depth for a more realistic snowfall effect.
+
+## License
+
+MIT License.
+
