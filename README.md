@@ -15,8 +15,8 @@ Add festive snow to your site easily with multiple layers, seasonal activation, 
 
 | Dependency | Version |
 |------------|---------|
-| Laravel | `^10.0 || ^11.0 || ^12.0` |
-| PHP | `^8.1 || ^8.2` |
+| Laravel | `^10.0` \| `^11.0` \| `^12.0` |
+| PHP | `^8.1` \| `^8.2` |
 
 ## Installation and Usage
 
