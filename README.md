@@ -1,34 +1,38 @@
 # Laravel Snowfall
 
-A configurable snowfall effect for Laravel applications with Blade directive support. Add festive snow to your site easily with multiple layers, seasonal activation, and fully customizable settings.
+A configurable snowfall effect for Laravel applications. 
+Add festive snow to your site easily with multiple layers, seasonal activation, and fully customizable settings.
 
 ## Features
 
 - Multiple snow layers with configurable flake count, size, and speed.
 - Seasonal activation: automatically show snow between configurable start and end dates.
-- Blade directive: `@snowFall` for effortless inclusion.
+- Blade directive: `@snowfall` for effortless inclusion.
 - Fully configurable via `config/snowfall.php`.
 - Lightweight, vanilla JS implementation using `<canvas>`.
 
-## Installation
+## Installation and Usage
 
 ### 1. Require the package
 
-If using locally:
+You can install this package via composer using:
 
 ```bash
 composer require remeritus/laravel-snowfall
 ```
-Or include via your composer.json local repository.
+The package will automatically register its service provider.
+
 
 ### 2. Publish the configuration
+To publish the config file to config/snowfall.php run:
+
 ```bash
 php artisan vendor:publish --provider="Remeritus\Snowfall\SnowfallServiceProvider" --tag=config
 ```
 ### 3. Usage in Blade
 Simply add the directive where you want the snowfall to appear:
 ```php
-@snowFall
+@snowfall
 ```
 
 ### 4. Configuration
