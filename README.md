@@ -34,16 +34,16 @@ Simply add the directive where you want the snowfall to appear:
 ### 4. Configuration
 Edit `config/snowfall.php` to customize:
 
-- activate: Enable or disable globally.
-- start_date / end_date: Optional seasonal activation.
-- layers: Array of snow layers. Each layer supports:
-	- flake_count: Number of flakes in this layer.
-	- max_size: Maximum flake size.
-	- max_speed: Maximum falling speed.
-	- swing_min / swing_max: Side-to-side swinging amplitude.
-- color: Snow RGB color (e.g., '255,255,255').
-- opacity: Snow opacity (0.0–1.0).
-- canvas_z_index: Z-index of the snow `<canvas>`.
+- **activate**: Enable or disable globally.
+- **start_date / end_date**: Optional seasonal activation.
+- **layers**: Array of snow layers. Each layer supports:
+	- **flake_count**: Number of flakes in this layer.
+	- **max_size**: Maximum flake size.
+	- **max_speed**: Maximum falling speed.
+	- **swing_min / swing_max**: Side-to-side swinging amplitude.
+- **color**: Snow RGB color (e.g., `'255,255,255'`).
+- **opacity**: Snow opacity (`0.0`–`1.0`).
+- **canvas_z_index**: Z-index of the snow `<canvas>`.
 
 Example:
 ```php
