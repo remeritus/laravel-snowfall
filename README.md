@@ -73,6 +73,7 @@ Here are the available keys:
 SNOWFALL_ENABLED=true
 ```
 `true` → package loads and snow logic runs (default value)
+
 `false` → package does nothing, no assets included
 ##### Mode control
 ```env
