@@ -18,7 +18,7 @@ class SnowfallServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/resources/views', 'snowfall');
 
         // Register Blade directive
-        Blade::directive('snowFall', function () {
+        Blade::directive('snowfall', function () {
             return "<?php echo view('snowfall::snowfall')->render(); ?>";
         });
     }
