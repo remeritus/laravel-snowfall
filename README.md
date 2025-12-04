@@ -11,6 +11,12 @@ Add festive snow to your site easily with multiple layers, seasonal activation, 
 - Fully configurable via `config/snowfall.php`.
 - Lightweight, vanilla JS implementation using `<canvas>`.
 
+## Requirements / Compatibility
+
+Laravel: 10.x or higher
+
+PHP: 8.0 or higher
+
 ## Installation and Usage
 
 ### 1. Require the package
