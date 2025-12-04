@@ -13,9 +13,10 @@ Add festive snow to your site easily with multiple layers, seasonal activation, 
 
 ## Requirements / Compatibility
 
-Laravel: 10.x or higher
-
-PHP: 8.0 or higher
+| Dependency | Version |
+|------------|---------|
+| Laravel | `^10.0 || ^11.0 || ^12.0` |
+| PHP | `^8.1 || ^8.2` |
 
 ## Installation and Usage
 
