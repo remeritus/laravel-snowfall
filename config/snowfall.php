@@ -1,12 +1,34 @@
 <?php
 
+use Carbon\Carbon;
+
+$currentYear = Carbon::now()->year;
+
 return [
-    'activate' => true,  // manual global on/off
+    /*
+    |--------------------------------------------------------------------------
+    | Activate Snowfall
+    |--------------------------------------------------------------------------
+    | Default is false. Can be overridden via .env by setting SNOWFALL_ACTIVE=true
+    */
+    'activate' => env('SNOWFALL_ACTIVE', false),
 
-    // Optional seasonal activation (YYYY-MM-DD)
-    'start_date' => '2025-12-01',
-    'end_date' => '2025-12-31',
+    /*
+    |--------------------------------------------------------------------------
+    | Seasonal Activation Dates
+    |--------------------------------------------------------------------------
+    | Defaults to current year's December 1st to December 31st.
+    | Format: YYYY-MM-DD
+    */
+    'start_date' => env('SNOWFALL_START_DATE', Carbon::createFromDate($currentYear, 12, 1)->toDateString()),
+    'end_date'   => env('SNOWFALL_END_DATE', Carbon::createFromDate($currentYear, 12, 31)->toDateString()),
 
+    /*
+    |--------------------------------------------------------------------------
+    | Snow Layers
+    |--------------------------------------------------------------------------
+    | Each layer can have its own count, size, speed, and swing amplitude.
+    */
     'layers' => [
         [
             'flake_count' => 60,
@@ -31,6 +53,11 @@ return [
         ],
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Snow Appearance
+    |--------------------------------------------------------------------------
+    */
     'color' => '255,255,255',  // RGB
     'opacity' => 0.8,
     'canvas_z_index' => 1000,
