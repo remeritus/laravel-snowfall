@@ -72,8 +72,7 @@ Here are the available keys:
 ```env
 SNOWFALL_ENABLED=true
 ```
-`true` → package loads and snow logic runs
-
+`true` → package loads and snow logic runs (default value)
 `false` → package does nothing, no assets included
 ##### Mode control
 ```env
@@ -82,7 +81,7 @@ SNOWFALL_MODE=seasonal
 Possible values:
 | Value | Description|
 |-------|------------|
-| `seasonal` | Snow only appears between the configured dates |
+| `seasonal` | Snow only appears between the configured dates (default value) |
 | `always` | Snow appears all the time |
 
 ##### Seasonal dates
