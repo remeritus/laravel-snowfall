@@ -31,6 +31,11 @@
 (function(){
     const config = @json(config('snowfall'));
 
+    // Respect OS-level reduced-motion preference
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        return; // disables snow animation automatically
+    }
+
     const canvas = document.getElementById('snowfall-canvas');
     const ctx = canvas.getContext('2d');
 
