@@ -47,9 +47,21 @@ To publish the config file to config/snowfall.php run:
 php artisan vendor:publish --provider="Remeritus\Snowfall\SnowfallServiceProvider" --tag=config
 ```
 ### 3. Usage in Blade
-Simply add the directive where you want the snowfall to appear:
-```php
-@snowfall
+Simply add `@snowfall` directive in your blade file, inside of the `<body>` tag, on the pages where you want the snowfall to appear:
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Metas, Styles, JS... -->
+</head>
+
+<body>
+    @snowfall
+    <!-- Your content... -->
+</body>
+
+</html>
 ```
 
 ### 4. Configuration
